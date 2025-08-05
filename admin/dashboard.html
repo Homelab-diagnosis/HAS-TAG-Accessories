@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - HAS#TAG</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@1.6.5/dist/flowbite.min.js"></script>
+</head>
+
+<body class="bg-gray-100">
+  <header class="bg-indigo-600 text-white py-4 px-6 flex justify-between items-center shadow-lg animate-fade-in-down">
+    <h1 class="text-2xl font-bold tracking-wide">HAS#TAG Admin Panel</h1>
+    <nav class="space-x-4 text-sm">
+      <a href="../../index.html" class="hover:underline hover:text-yellow-300 transition">Home</a>
+      <a href="../../products.html" class="hover:underline hover:text-yellow-300 transition">Shop</a>
+      <a href="../../cart.html" class="hover:underline hover:text-yellow-300 transition">Cart</a>
+      <a href="../../checkout.html" class="hover:underline hover:text-yellow-300 transition">Checkout</a>
+      <a href="../../contact.html" class="hover:underline hover:text-yellow-300 transition">Contact</a>
+      <a href="login.html" class="hover:underline hover:text-red-300 transition">Logout</a>
+    </nav>
+  </header>
+
+  <main class="p-6 grid gap-10 animate-fade-in-up">
+    <div class="flex justify-center">
+      <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_tfb3estd.json" background="transparent" speed="1" style="width: 100px; height: 100px;" loop autoplay></lottie-player>
+    </div>
+
+    <section class="bg-white shadow-md rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4 text-indigo-700">Add Product</h2>
+      <form class="grid gap-4 md:grid-cols-2" id="addProductForm">
+        <input type="text" placeholder="Product Name" class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+        <input type="text" placeholder="Brand" class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+        <input type="number" placeholder="Price (₹)" class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+        <input type="text" placeholder="Category" class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+        <input type="url" placeholder="Image URL" class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+        <textarea placeholder="Product Description" class="border rounded px-3 py-2 md:col-span-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" rows="3"></textarea>
+        <button type="submit" class="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-500 w-full md:col-span-2 transition transform hover:scale-105">Add Product</button>
+      </form>
+    </section>
+
+    <section class="bg-white shadow-md rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4 text-indigo-700">Product List</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white text-sm text-left border border-gray-200">
+          <thead class="bg-indigo-50">
+            <tr>
+              <th class="py-2 px-4">Name</th>
+              <th class="py-2 px-4">Brand</th>
+              <th class="py-2 px-4">Price</th>
+              <th class="py-2 px-4">Category</th>
+              <th class="py-2 px-4">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+            <tr class="hover:bg-gray-50">
+              <td class="py-2 px-4">Stylish Watch</td>
+              <td class="py-2 px-4">Fastrack</td>
+              <td class="py-2 px-4">₹1999</td>
+              <td class="py-2 px-4">Watches</td>
+              <td class="py-2 px-4">
+                <button class="text-blue-600 hover:underline mr-2">Edit</button>
+                <button class="text-red-600 hover:underline">Delete</button>
+              </td>
+            </tr>
+            <!-- Dynamic rows will be injected here -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="bg-white shadow-md rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4 text-indigo-700">Orders</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white text-sm text-left border border-gray-200">
+          <thead class="bg-indigo-50">
+            <tr>
+              <th class="py-2 px-4">Customer</th>
+              <th class="py-2 px-4">Item</th>
+              <th class="py-2 px-4">Amount</th>
+              <th class="py-2 px-4">Status</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+            <tr class="hover:bg-gray-50">
+              <td class="py-2 px-4">Anjali Sinha</td>
+              <td class="py-2 px-4">Ladies Bag</td>
+              <td class="py-2 px-4">₹1,499</td>
+              <td class="py-2 px-4 text-green-600 font-medium">Paid</td>
+            </tr>
+            <!-- More orders here -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    @keyframes fade-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fade-in-down {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fade-in-up 0.5s ease-in-out both;
+    }
+
+    .animate-fade-in-down {
+      animation: fade-in-down 0.5s ease-in-out both;
+    }
+  </style>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details - HAS#TAG</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-white text-gray-800">
+  <!-- Header -->
+  <header class="shadow-md sticky top-0 bg-white z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-600">HAS#TAG</h1>
+      <nav class="space-x-6 hidden md:block">
+  <a href="index.html" class="hover:text-indigo-600">Home</a>
+  <a href="products.html" class="hover:text-indigo-600">Shop</a>
+  <a href="cart.html" class="hover:text-indigo-600">Cart</a>
+  <a href="checkout.html" class="hover:text-indigo-600">Checkout</a>
+  <a href="contact.html" class="hover:text-indigo-600">Contact</a>
+</nav>
+
+      <div>
+        <button class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-500">Cart</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Product Detail -->
+  <main class="max-w-5xl mx-auto px-4 py-12">
+    <div class="grid md:grid-cols-2 gap-8">
+      <img src="https://via.placeholder.com/500" alt="Product Image" class="rounded shadow-md">
+
+      <div>
+        <h2 class="text-3xl font-bold mb-2">Stylish Watch</h2>
+        <p class="text-sm text-gray-600 mb-4">Brand: XYZ | Category: Accessories</p>
+        <p class="text-indigo-600 text-2xl font-semibold mb-4">₹1,999</p>
+        <p class="text-gray-700 mb-6">A premium quality wrist watch with elegant design and durable build. Ideal for both casual and formal wear.</p>
+
+        <form action="cart.html" method="GET" class="space-y-4">
+          <div>
+            <label for="quantity" class="block text-sm font-medium">Quantity</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" class="border w-20 py-1 px-2 rounded">
+          </div>
+
+          <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded hover:bg-indigo-500">Add to Cart</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-gray-100 py-6 text-center text-sm text-gray-500">
+    © 2025 HAS#TAG Accessories. All rights reserved.
+  </footer>
+</body>
+
+</html>

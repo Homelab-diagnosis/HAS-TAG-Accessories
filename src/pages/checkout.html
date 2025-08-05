@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - HAS#TAG Accessories</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-white text-gray-800">
+  <header class="shadow-md sticky top-0 bg-white z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-600">HAS#TAG</h1>
+      <nav class="space-x-6 hidden md:block">
+  <a href="index.html" class="hover:text-indigo-600">Home</a>
+  <a href="products.html" class="hover:text-indigo-600">Shop</a>
+  <a href="cart.html" class="hover:text-indigo-600">Cart</a>
+  <a href="checkout.html" class="hover:text-indigo-600">Checkout</a>
+  <a href="contact.html" class="hover:text-indigo-600">Contact</a>
+      </nav>
+      <div>
+        <button class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-500">Cart</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-bold mb-6">Checkout</h2>
+
+    <form action="#" method="POST" class="space-y-6">
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label for="name" class="block text-sm font-medium">Full Name</label>
+          <input type="text" id="name" name="name" class="border w-full py-2 px-3 rounded" required>
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium">Email</label>
+          <input type="email" id="email" name="email" class="border w-full py-2 px-3 rounded" required>
+        </div>
+        <div>
+          <label for="phone" class="block text-sm font-medium">Phone</label>
+          <input type="tel" id="phone" name="phone" class="border w-full py-2 px-3 rounded" required>
+        </div>
+        <div>
+          <label for="city" class="block text-sm font-medium">City</label>
+          <input type="text" id="city" name="city" class="border w-full py-2 px-3 rounded" required>
+        </div>
+      </div>
+
+      <div>
+        <label for="address" class="block text-sm font-medium">Full Address</label>
+        <textarea id="address" name="address" rows="3" class="border w-full py-2 px-3 rounded" required></textarea>
+      </div>
+
+      <div class="mt-8 text-right">
+        <button type="button" onclick="payNow()" class="bg-indigo-600 text-white px-6 py-2 rounded hover:bg-indigo-500 font-semibold">
+          Pay with Razorpay
+        </button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="bg-gray-100 py-6 text-center text-sm text-gray-500">
+    © 2025 HAS#TAG Accessories. All rights reserved.
+  </footer>
+
+  <!-- Razorpay Script (Placeholder Integration) -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    function payNow() {
+      const options = {
+        key: "rzp_test_1234567890", // Replace with your Razorpay test key
+        amount: 199900, // in paise = ₹1999.00
+        currency: "INR",
+        name: "HAS#TAG Accessories",
+        description: "Order Payment",
+        image: "https://via.placeholder.com/100x100",
+        handler: function (response) {
+          alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+        },
+        prefill: {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          contact: document.getElementById("phone").value,
+        },
+        theme: {
+          color: "#4f46e5"
+        }
+      };
+
+      const rzp = new Razorpay(options);
+      rzp.open();
+    }
+  </script>
+</body>
+
+</html>
